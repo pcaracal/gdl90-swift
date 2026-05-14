@@ -366,5 +366,7 @@ void* __swift_bridge__$PreciseOwnship$latitude(void* self);
 void* __swift_bridge__$PreciseOwnship$longitude(void* self);
 void* __swift_bridge__$PreciseOwnship$altitude(void* self);
 void* __swift_bridge__$PreciseOwnship$ground_speed(void* self);
+void* __swift_bridge__$nacp_horizontal_accuracy(struct __swift_bridge__$NACp nacp);
+void* __swift_bridge__$nacp_vertical_accuracy(struct __swift_bridge__$NACp nacp);
 
 

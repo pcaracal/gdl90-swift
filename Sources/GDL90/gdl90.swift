@@ -2,6 +2,12 @@ import RustXcframework
 public func parse_gdl90_bytes(_ bytes: UnsafeBufferPointer<UInt8>) -> RustVec<MessageResult> {
     RustVec(ptr: __swift_bridge__$parse_gdl90_bytes(bytes.toFfiSlice()))
 }
+public func nacp_horizontal_accuracy(_ nacp: NACp) -> Optional<Length> {
+    { let val = __swift_bridge__$nacp_horizontal_accuracy(nacp.intoFfiRepr()); if val != nil { return Length(ptr: val!) } else { return nil } }()
+}
+public func nacp_vertical_accuracy(_ nacp: NACp) -> Optional<Length> {
+    { let val = __swift_bridge__$nacp_vertical_accuracy(nacp.intoFfiRepr()); if val != nil { return Length(ptr: val!) } else { return nil } }()
+}
 public struct Heartbeat {
     public var gps_pos_valid: Bool
     public var maint_reqd: Bool
