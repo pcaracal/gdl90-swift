@@ -2,6 +2,18 @@ import RustXcframework
 public func parse_gdl90_bytes(_ bytes: UnsafeBufferPointer<UInt8>) -> RustVec<MessageResult> {
     RustVec(ptr: __swift_bridge__$parse_gdl90_bytes(bytes.toFfiSlice()))
 }
+public func to_nacp(_ value: UInt8) -> NACp {
+    __swift_bridge__$to_nacp(value).intoSwiftRepr()
+}
+public func to_nic(_ value: UInt8) -> NIC {
+    __swift_bridge__$to_nic(value).intoSwiftRepr()
+}
+public func from_nacp(_ nacp: NACp) -> UInt8 {
+    __swift_bridge__$from_nacp(nacp.intoFfiRepr())
+}
+public func from_nic(_ nic: NIC) -> UInt8 {
+    __swift_bridge__$from_nic(nic.intoFfiRepr())
+}
 public func nacp_horizontal_accuracy(_ nacp: NACp) -> Optional<Length> {
     { let val = __swift_bridge__$nacp_horizontal_accuracy(nacp.intoFfiRepr()); if val != nil { return Length(ptr: val!) } else { return nil } }()
 }

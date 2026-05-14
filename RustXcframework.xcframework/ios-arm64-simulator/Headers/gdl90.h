@@ -366,6 +366,10 @@ void* __swift_bridge__$PreciseOwnship$latitude(void* self);
 void* __swift_bridge__$PreciseOwnship$longitude(void* self);
 void* __swift_bridge__$PreciseOwnship$altitude(void* self);
 void* __swift_bridge__$PreciseOwnship$ground_speed(void* self);
+struct __swift_bridge__$NACp __swift_bridge__$to_nacp(uint8_t value);
+struct __swift_bridge__$NIC __swift_bridge__$to_nic(uint8_t value);
+uint8_t __swift_bridge__$from_nacp(struct __swift_bridge__$NACp nacp);
+uint8_t __swift_bridge__$from_nic(struct __swift_bridge__$NIC nic);
 void* __swift_bridge__$nacp_horizontal_accuracy(struct __swift_bridge__$NACp nacp);
 void* __swift_bridge__$nacp_vertical_accuracy(struct __swift_bridge__$NACp nacp);
 
