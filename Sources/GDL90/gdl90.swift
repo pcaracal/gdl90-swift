@@ -1847,8 +1847,8 @@ extension TrafficReportRef {
         Angle(ptr: __swift_bridge__$TrafficReport$longitude(ptr))
     }
 
-    public func altitude() -> Length {
-        Length(ptr: __swift_bridge__$TrafficReport$altitude(ptr))
+    public func altitude() -> Optional<Length> {
+        { let val = __swift_bridge__$TrafficReport$altitude(ptr); if val != nil { return Length(ptr: val!) } else { return nil } }()
     }
 
     public func miscellaneous_indicators() -> MiscellaneousIndicators {
