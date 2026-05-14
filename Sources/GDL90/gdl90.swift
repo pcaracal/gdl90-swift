@@ -186,45 +186,6 @@ extension TrafficAlertStatus: Vectorizable {
         __swift_bridge__$Vec_TrafficAlertStatus$len(vecPtr)
     }
 }
-public struct TargetIdentity {
-    public var address_type: AddressType
-    public var participant_address: UInt32
-
-    public init(address_type: AddressType,participant_address: UInt32) {
-        self.address_type = address_type
-        self.participant_address = participant_address
-    }
-
-    @inline(__always)
-    func intoFfiRepr() -> __swift_bridge__$TargetIdentity {
-        { let val = self; return __swift_bridge__$TargetIdentity(address_type: val.address_type.intoFfiRepr(), participant_address: val.participant_address); }()
-    }
-}
-extension __swift_bridge__$TargetIdentity {
-    @inline(__always)
-    func intoSwiftRepr() -> TargetIdentity {
-        { let val = self; return TargetIdentity(address_type: val.address_type.intoSwiftRepr(), participant_address: val.participant_address); }()
-    }
-}
-extension __swift_bridge__$Option$TargetIdentity {
-    @inline(__always)
-    func intoSwiftRepr() -> Optional<TargetIdentity> {
-        if self.is_some {
-            return self.val.intoSwiftRepr()
-        } else {
-            return nil
-        }
-    }
-
-    @inline(__always)
-    static func fromSwiftRepr(_ val: Optional<TargetIdentity>) -> __swift_bridge__$Option$TargetIdentity {
-        if let v = val {
-            return __swift_bridge__$Option$TargetIdentity(is_some: true, val: v.intoFfiRepr())
-        } else {
-            return __swift_bridge__$Option$TargetIdentity(is_some: false, val: __swift_bridge__$TargetIdentity())
-        }
-    }
-}
 public enum AddressType {
     case AdsbIcao
     case AdsbSelfAssigned
@@ -325,31 +286,29 @@ extension AddressType: Vectorizable {
         __swift_bridge__$Vec_AddressType$len(vecPtr)
     }
 }
-public struct MiscellaneousIndicators {
-    public var air_ground_state: AirGroundState
-    public var report_type: ReportType
-    public var track_heading_type: TrackHeadingType
+public struct TargetIdentity {
+    public var address_type: AddressType
+    public var participant_address: UInt32
 
-    public init(air_ground_state: AirGroundState,report_type: ReportType,track_heading_type: TrackHeadingType) {
-        self.air_ground_state = air_ground_state
-        self.report_type = report_type
-        self.track_heading_type = track_heading_type
+    public init(address_type: AddressType,participant_address: UInt32) {
+        self.address_type = address_type
+        self.participant_address = participant_address
     }
 
     @inline(__always)
-    func intoFfiRepr() -> __swift_bridge__$MiscellaneousIndicators {
-        { let val = self; return __swift_bridge__$MiscellaneousIndicators(air_ground_state: val.air_ground_state.intoFfiRepr(), report_type: val.report_type.intoFfiRepr(), track_heading_type: val.track_heading_type.intoFfiRepr()); }()
+    func intoFfiRepr() -> __swift_bridge__$TargetIdentity {
+        { let val = self; return __swift_bridge__$TargetIdentity(address_type: val.address_type.intoFfiRepr(), participant_address: val.participant_address); }()
     }
 }
-extension __swift_bridge__$MiscellaneousIndicators {
+extension __swift_bridge__$TargetIdentity {
     @inline(__always)
-    func intoSwiftRepr() -> MiscellaneousIndicators {
-        { let val = self; return MiscellaneousIndicators(air_ground_state: val.air_ground_state.intoSwiftRepr(), report_type: val.report_type.intoSwiftRepr(), track_heading_type: val.track_heading_type.intoSwiftRepr()); }()
+    func intoSwiftRepr() -> TargetIdentity {
+        { let val = self; return TargetIdentity(address_type: val.address_type.intoSwiftRepr(), participant_address: val.participant_address); }()
     }
 }
-extension __swift_bridge__$Option$MiscellaneousIndicators {
+extension __swift_bridge__$Option$TargetIdentity {
     @inline(__always)
-    func intoSwiftRepr() -> Optional<MiscellaneousIndicators> {
+    func intoSwiftRepr() -> Optional<TargetIdentity> {
         if self.is_some {
             return self.val.intoSwiftRepr()
         } else {
@@ -358,11 +317,11 @@ extension __swift_bridge__$Option$MiscellaneousIndicators {
     }
 
     @inline(__always)
-    static func fromSwiftRepr(_ val: Optional<MiscellaneousIndicators>) -> __swift_bridge__$Option$MiscellaneousIndicators {
+    static func fromSwiftRepr(_ val: Optional<TargetIdentity>) -> __swift_bridge__$Option$TargetIdentity {
         if let v = val {
-            return __swift_bridge__$Option$MiscellaneousIndicators(is_some: true, val: v.intoFfiRepr())
+            return __swift_bridge__$Option$TargetIdentity(is_some: true, val: v.intoFfiRepr())
         } else {
-            return __swift_bridge__$Option$MiscellaneousIndicators(is_some: false, val: __swift_bridge__$MiscellaneousIndicators())
+            return __swift_bridge__$Option$TargetIdentity(is_some: false, val: __swift_bridge__$TargetIdentity())
         }
     }
 }
@@ -614,6 +573,47 @@ extension TrackHeadingType: Vectorizable {
 
     public static func vecOfSelfLen(vecPtr: UnsafeMutableRawPointer) -> UInt {
         __swift_bridge__$Vec_TrackHeadingType$len(vecPtr)
+    }
+}
+public struct MiscellaneousIndicators {
+    public var air_ground_state: AirGroundState
+    public var report_type: ReportType
+    public var track_heading_type: TrackHeadingType
+
+    public init(air_ground_state: AirGroundState,report_type: ReportType,track_heading_type: TrackHeadingType) {
+        self.air_ground_state = air_ground_state
+        self.report_type = report_type
+        self.track_heading_type = track_heading_type
+    }
+
+    @inline(__always)
+    func intoFfiRepr() -> __swift_bridge__$MiscellaneousIndicators {
+        { let val = self; return __swift_bridge__$MiscellaneousIndicators(air_ground_state: val.air_ground_state.intoFfiRepr(), report_type: val.report_type.intoFfiRepr(), track_heading_type: val.track_heading_type.intoFfiRepr()); }()
+    }
+}
+extension __swift_bridge__$MiscellaneousIndicators {
+    @inline(__always)
+    func intoSwiftRepr() -> MiscellaneousIndicators {
+        { let val = self; return MiscellaneousIndicators(air_ground_state: val.air_ground_state.intoSwiftRepr(), report_type: val.report_type.intoSwiftRepr(), track_heading_type: val.track_heading_type.intoSwiftRepr()); }()
+    }
+}
+extension __swift_bridge__$Option$MiscellaneousIndicators {
+    @inline(__always)
+    func intoSwiftRepr() -> Optional<MiscellaneousIndicators> {
+        if self.is_some {
+            return self.val.intoSwiftRepr()
+        } else {
+            return nil
+        }
+    }
+
+    @inline(__always)
+    static func fromSwiftRepr(_ val: Optional<MiscellaneousIndicators>) -> __swift_bridge__$Option$MiscellaneousIndicators {
+        if let v = val {
+            return __swift_bridge__$Option$MiscellaneousIndicators(is_some: true, val: v.intoFfiRepr())
+        } else {
+            return __swift_bridge__$Option$MiscellaneousIndicators(is_some: false, val: __swift_bridge__$MiscellaneousIndicators())
+        }
     }
 }
 public enum NIC {
@@ -1146,133 +1146,6 @@ extension EmergencyPriorityCode: Vectorizable {
         __swift_bridge__$Vec_EmergencyPriorityCode$len(vecPtr)
     }
 }
-public struct ForeFlightID {
-    public var version: UInt8
-    public var device_serial_number: UInt64
-    public var device_name: RustString
-    public var device_long_name: RustString
-    public var foreflight_internet_policy: ForeFlightInternetPolicy
-    public var geometric_altitude_datum: GeometricAltitudeDatum
-
-    public init(version: UInt8,device_serial_number: UInt64,device_name: RustString,device_long_name: RustString,foreflight_internet_policy: ForeFlightInternetPolicy,geometric_altitude_datum: GeometricAltitudeDatum) {
-        self.version = version
-        self.device_serial_number = device_serial_number
-        self.device_name = device_name
-        self.device_long_name = device_long_name
-        self.foreflight_internet_policy = foreflight_internet_policy
-        self.geometric_altitude_datum = geometric_altitude_datum
-    }
-
-    @inline(__always)
-    func intoFfiRepr() -> __swift_bridge__$ForeFlightID {
-        { let val = self; return __swift_bridge__$ForeFlightID(version: val.version, device_serial_number: val.device_serial_number, device_name: { let rustString = val.device_name.intoRustString(); rustString.isOwned = false; return rustString.ptr }(), device_long_name: { let rustString = val.device_long_name.intoRustString(); rustString.isOwned = false; return rustString.ptr }(), foreflight_internet_policy: val.foreflight_internet_policy.intoFfiRepr(), geometric_altitude_datum: val.geometric_altitude_datum.intoFfiRepr()); }()
-    }
-}
-extension __swift_bridge__$ForeFlightID {
-    @inline(__always)
-    func intoSwiftRepr() -> ForeFlightID {
-        { let val = self; return ForeFlightID(version: val.version, device_serial_number: val.device_serial_number, device_name: RustString(ptr: val.device_name), device_long_name: RustString(ptr: val.device_long_name), foreflight_internet_policy: val.foreflight_internet_policy.intoSwiftRepr(), geometric_altitude_datum: val.geometric_altitude_datum.intoSwiftRepr()); }()
-    }
-}
-extension __swift_bridge__$Option$ForeFlightID {
-    @inline(__always)
-    func intoSwiftRepr() -> Optional<ForeFlightID> {
-        if self.is_some {
-            return self.val.intoSwiftRepr()
-        } else {
-            return nil
-        }
-    }
-
-    @inline(__always)
-    static func fromSwiftRepr(_ val: Optional<ForeFlightID>) -> __swift_bridge__$Option$ForeFlightID {
-        if let v = val {
-            return __swift_bridge__$Option$ForeFlightID(is_some: true, val: v.intoFfiRepr())
-        } else {
-            return __swift_bridge__$Option$ForeFlightID(is_some: false, val: __swift_bridge__$ForeFlightID())
-        }
-    }
-}
-public enum GeometricAltitudeDatum {
-    case WGS84
-    case MSL
-}
-extension GeometricAltitudeDatum {
-    func intoFfiRepr() -> __swift_bridge__$GeometricAltitudeDatum {
-        switch self {
-            case GeometricAltitudeDatum.WGS84:
-                return __swift_bridge__$GeometricAltitudeDatum(tag: __swift_bridge__$GeometricAltitudeDatum$WGS84)
-            case GeometricAltitudeDatum.MSL:
-                return __swift_bridge__$GeometricAltitudeDatum(tag: __swift_bridge__$GeometricAltitudeDatum$MSL)
-        }
-    }
-}
-extension __swift_bridge__$GeometricAltitudeDatum {
-    func intoSwiftRepr() -> GeometricAltitudeDatum {
-        switch self.tag {
-            case __swift_bridge__$GeometricAltitudeDatum$WGS84:
-                return GeometricAltitudeDatum.WGS84
-            case __swift_bridge__$GeometricAltitudeDatum$MSL:
-                return GeometricAltitudeDatum.MSL
-            default:
-                fatalError("Unreachable")
-        }
-    }
-}
-extension __swift_bridge__$Option$GeometricAltitudeDatum {
-    @inline(__always)
-    func intoSwiftRepr() -> Optional<GeometricAltitudeDatum> {
-        if self.is_some {
-            return self.val.intoSwiftRepr()
-        } else {
-            return nil
-        }
-    }
-    @inline(__always)
-    static func fromSwiftRepr(_ val: Optional<GeometricAltitudeDatum>) -> __swift_bridge__$Option$GeometricAltitudeDatum {
-        if let v = val {
-            return __swift_bridge__$Option$GeometricAltitudeDatum(is_some: true, val: v.intoFfiRepr())
-        } else {
-            return __swift_bridge__$Option$GeometricAltitudeDatum(is_some: false, val: __swift_bridge__$GeometricAltitudeDatum())
-        }
-    }
-}
-extension GeometricAltitudeDatum: Vectorizable {
-    public static func vecOfSelfNew() -> UnsafeMutableRawPointer {
-        __swift_bridge__$Vec_GeometricAltitudeDatum$new()
-    }
-
-    public static func vecOfSelfFree(vecPtr: UnsafeMutableRawPointer) {
-        __swift_bridge__$Vec_GeometricAltitudeDatum$drop(vecPtr)
-    }
-
-    public static func vecOfSelfPush(vecPtr: UnsafeMutableRawPointer, value: Self) {
-        __swift_bridge__$Vec_GeometricAltitudeDatum$push(vecPtr, value.intoFfiRepr())
-    }
-
-    public static func vecOfSelfPop(vecPtr: UnsafeMutableRawPointer) -> Optional<Self> {
-        let maybeEnum = __swift_bridge__$Vec_GeometricAltitudeDatum$pop(vecPtr)
-        return maybeEnum.intoSwiftRepr()
-    }
-
-    public static func vecOfSelfGet(vecPtr: UnsafeMutableRawPointer, index: UInt) -> Optional<Self> {
-        let maybeEnum = __swift_bridge__$Vec_GeometricAltitudeDatum$get(vecPtr, index)
-        return maybeEnum.intoSwiftRepr()
-    }
-
-    public static func vecOfSelfGetMut(vecPtr: UnsafeMutableRawPointer, index: UInt) -> Optional<Self> {
-        let maybeEnum = __swift_bridge__$Vec_GeometricAltitudeDatum$get_mut(vecPtr, index)
-        return maybeEnum.intoSwiftRepr()
-    }
-
-    public static func vecOfSelfAsPtr(vecPtr: UnsafeMutableRawPointer) -> UnsafePointer<Self> {
-        UnsafePointer<Self>(OpaquePointer(__swift_bridge__$Vec_GeometricAltitudeDatum$as_ptr(vecPtr)))
-    }
-
-    public static func vecOfSelfLen(vecPtr: UnsafeMutableRawPointer) -> UInt {
-        __swift_bridge__$Vec_GeometricAltitudeDatum$len(vecPtr)
-    }
-}
 public enum ForeFlightInternetPolicy {
     case Unrestricted
     case Expensive
@@ -1356,6 +1229,133 @@ extension ForeFlightInternetPolicy: Vectorizable {
 
     public static func vecOfSelfLen(vecPtr: UnsafeMutableRawPointer) -> UInt {
         __swift_bridge__$Vec_ForeFlightInternetPolicy$len(vecPtr)
+    }
+}
+public enum GeometricAltitudeDatum {
+    case WGS84
+    case MSL
+}
+extension GeometricAltitudeDatum {
+    func intoFfiRepr() -> __swift_bridge__$GeometricAltitudeDatum {
+        switch self {
+            case GeometricAltitudeDatum.WGS84:
+                return __swift_bridge__$GeometricAltitudeDatum(tag: __swift_bridge__$GeometricAltitudeDatum$WGS84)
+            case GeometricAltitudeDatum.MSL:
+                return __swift_bridge__$GeometricAltitudeDatum(tag: __swift_bridge__$GeometricAltitudeDatum$MSL)
+        }
+    }
+}
+extension __swift_bridge__$GeometricAltitudeDatum {
+    func intoSwiftRepr() -> GeometricAltitudeDatum {
+        switch self.tag {
+            case __swift_bridge__$GeometricAltitudeDatum$WGS84:
+                return GeometricAltitudeDatum.WGS84
+            case __swift_bridge__$GeometricAltitudeDatum$MSL:
+                return GeometricAltitudeDatum.MSL
+            default:
+                fatalError("Unreachable")
+        }
+    }
+}
+extension __swift_bridge__$Option$GeometricAltitudeDatum {
+    @inline(__always)
+    func intoSwiftRepr() -> Optional<GeometricAltitudeDatum> {
+        if self.is_some {
+            return self.val.intoSwiftRepr()
+        } else {
+            return nil
+        }
+    }
+    @inline(__always)
+    static func fromSwiftRepr(_ val: Optional<GeometricAltitudeDatum>) -> __swift_bridge__$Option$GeometricAltitudeDatum {
+        if let v = val {
+            return __swift_bridge__$Option$GeometricAltitudeDatum(is_some: true, val: v.intoFfiRepr())
+        } else {
+            return __swift_bridge__$Option$GeometricAltitudeDatum(is_some: false, val: __swift_bridge__$GeometricAltitudeDatum())
+        }
+    }
+}
+extension GeometricAltitudeDatum: Vectorizable {
+    public static func vecOfSelfNew() -> UnsafeMutableRawPointer {
+        __swift_bridge__$Vec_GeometricAltitudeDatum$new()
+    }
+
+    public static func vecOfSelfFree(vecPtr: UnsafeMutableRawPointer) {
+        __swift_bridge__$Vec_GeometricAltitudeDatum$drop(vecPtr)
+    }
+
+    public static func vecOfSelfPush(vecPtr: UnsafeMutableRawPointer, value: Self) {
+        __swift_bridge__$Vec_GeometricAltitudeDatum$push(vecPtr, value.intoFfiRepr())
+    }
+
+    public static func vecOfSelfPop(vecPtr: UnsafeMutableRawPointer) -> Optional<Self> {
+        let maybeEnum = __swift_bridge__$Vec_GeometricAltitudeDatum$pop(vecPtr)
+        return maybeEnum.intoSwiftRepr()
+    }
+
+    public static func vecOfSelfGet(vecPtr: UnsafeMutableRawPointer, index: UInt) -> Optional<Self> {
+        let maybeEnum = __swift_bridge__$Vec_GeometricAltitudeDatum$get(vecPtr, index)
+        return maybeEnum.intoSwiftRepr()
+    }
+
+    public static func vecOfSelfGetMut(vecPtr: UnsafeMutableRawPointer, index: UInt) -> Optional<Self> {
+        let maybeEnum = __swift_bridge__$Vec_GeometricAltitudeDatum$get_mut(vecPtr, index)
+        return maybeEnum.intoSwiftRepr()
+    }
+
+    public static func vecOfSelfAsPtr(vecPtr: UnsafeMutableRawPointer) -> UnsafePointer<Self> {
+        UnsafePointer<Self>(OpaquePointer(__swift_bridge__$Vec_GeometricAltitudeDatum$as_ptr(vecPtr)))
+    }
+
+    public static func vecOfSelfLen(vecPtr: UnsafeMutableRawPointer) -> UInt {
+        __swift_bridge__$Vec_GeometricAltitudeDatum$len(vecPtr)
+    }
+}
+public struct ForeFlightID {
+    public var version: UInt8
+    public var device_serial_number: UInt64
+    public var device_name: RustString
+    public var device_long_name: RustString
+    public var foreflight_internet_policy: ForeFlightInternetPolicy
+    public var geometric_altitude_datum: GeometricAltitudeDatum
+
+    public init(version: UInt8,device_serial_number: UInt64,device_name: RustString,device_long_name: RustString,foreflight_internet_policy: ForeFlightInternetPolicy,geometric_altitude_datum: GeometricAltitudeDatum) {
+        self.version = version
+        self.device_serial_number = device_serial_number
+        self.device_name = device_name
+        self.device_long_name = device_long_name
+        self.foreflight_internet_policy = foreflight_internet_policy
+        self.geometric_altitude_datum = geometric_altitude_datum
+    }
+
+    @inline(__always)
+    func intoFfiRepr() -> __swift_bridge__$ForeFlightID {
+        { let val = self; return __swift_bridge__$ForeFlightID(version: val.version, device_serial_number: val.device_serial_number, device_name: { let rustString = val.device_name.intoRustString(); rustString.isOwned = false; return rustString.ptr }(), device_long_name: { let rustString = val.device_long_name.intoRustString(); rustString.isOwned = false; return rustString.ptr }(), foreflight_internet_policy: val.foreflight_internet_policy.intoFfiRepr(), geometric_altitude_datum: val.geometric_altitude_datum.intoFfiRepr()); }()
+    }
+}
+extension __swift_bridge__$ForeFlightID {
+    @inline(__always)
+    func intoSwiftRepr() -> ForeFlightID {
+        { let val = self; return ForeFlightID(version: val.version, device_serial_number: val.device_serial_number, device_name: RustString(ptr: val.device_name), device_long_name: RustString(ptr: val.device_long_name), foreflight_internet_policy: val.foreflight_internet_policy.intoSwiftRepr(), geometric_altitude_datum: val.geometric_altitude_datum.intoSwiftRepr()); }()
+    }
+}
+extension __swift_bridge__$Option$ForeFlightID {
+    @inline(__always)
+    func intoSwiftRepr() -> Optional<ForeFlightID> {
+        if self.is_some {
+            return self.val.intoSwiftRepr()
+        } else {
+            return nil
+        }
+    }
+
+    @inline(__always)
+    static func fromSwiftRepr(_ val: Optional<ForeFlightID>) -> __swift_bridge__$Option$ForeFlightID {
+        if let v = val {
+            return __swift_bridge__$Option$ForeFlightID(is_some: true, val: v.intoFfiRepr())
+        } else {
+            return __swift_bridge__$Option$ForeFlightID(is_some: false, val: __swift_bridge__$ForeFlightID())
+        }
     }
 }
 public enum AHRSHeadingType {

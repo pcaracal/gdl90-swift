@@ -18,8 +18,6 @@ __swift_bridge__$Option$TrafficAlertStatus __swift_bridge__$Vec_TrafficAlertStat
 uintptr_t __swift_bridge__$Vec_TrafficAlertStatus$len(void* vec_ptr);
 void* __swift_bridge__$Vec_TrafficAlertStatus$as_ptr(void* vec_ptr);
 
-typedef struct __swift_bridge__$TargetIdentity { struct __swift_bridge__$AddressType address_type; uint32_t participant_address; } __swift_bridge__$TargetIdentity;
-typedef struct __swift_bridge__$Option$TargetIdentity { bool is_some; __swift_bridge__$TargetIdentity val; } __swift_bridge__$Option$TargetIdentity;
 typedef enum __swift_bridge__$AddressTypeTag { __swift_bridge__$AddressType$AdsbIcao, __swift_bridge__$AddressType$AdsbSelfAssigned, __swift_bridge__$AddressType$TisbIcao, __swift_bridge__$AddressType$TisbTrackFileId, __swift_bridge__$AddressType$SurfaceVehicle, __swift_bridge__$AddressType$GroundStationBeacon, } __swift_bridge__$AddressTypeTag;
 typedef struct __swift_bridge__$AddressType { __swift_bridge__$AddressTypeTag tag; } __swift_bridge__$AddressType;
 typedef struct __swift_bridge__$Option$AddressType { bool is_some; __swift_bridge__$AddressType val; } __swift_bridge__$Option$AddressType;
@@ -33,8 +31,8 @@ __swift_bridge__$Option$AddressType __swift_bridge__$Vec_AddressType$get_mut(voi
 uintptr_t __swift_bridge__$Vec_AddressType$len(void* vec_ptr);
 void* __swift_bridge__$Vec_AddressType$as_ptr(void* vec_ptr);
 
-typedef struct __swift_bridge__$MiscellaneousIndicators { struct __swift_bridge__$AirGroundState air_ground_state; struct __swift_bridge__$ReportType report_type; struct __swift_bridge__$TrackHeadingType track_heading_type; } __swift_bridge__$MiscellaneousIndicators;
-typedef struct __swift_bridge__$Option$MiscellaneousIndicators { bool is_some; __swift_bridge__$MiscellaneousIndicators val; } __swift_bridge__$Option$MiscellaneousIndicators;
+typedef struct __swift_bridge__$TargetIdentity { struct __swift_bridge__$AddressType address_type; uint32_t participant_address; } __swift_bridge__$TargetIdentity;
+typedef struct __swift_bridge__$Option$TargetIdentity { bool is_some; __swift_bridge__$TargetIdentity val; } __swift_bridge__$Option$TargetIdentity;
 typedef enum __swift_bridge__$AirGroundStateTag { __swift_bridge__$AirGroundState$OnGround, __swift_bridge__$AirGroundState$Airborne, } __swift_bridge__$AirGroundStateTag;
 typedef struct __swift_bridge__$AirGroundState { __swift_bridge__$AirGroundStateTag tag; } __swift_bridge__$AirGroundState;
 typedef struct __swift_bridge__$Option$AirGroundState { bool is_some; __swift_bridge__$AirGroundState val; } __swift_bridge__$Option$AirGroundState;
@@ -74,6 +72,8 @@ __swift_bridge__$Option$TrackHeadingType __swift_bridge__$Vec_TrackHeadingType$g
 uintptr_t __swift_bridge__$Vec_TrackHeadingType$len(void* vec_ptr);
 void* __swift_bridge__$Vec_TrackHeadingType$as_ptr(void* vec_ptr);
 
+typedef struct __swift_bridge__$MiscellaneousIndicators { struct __swift_bridge__$AirGroundState air_ground_state; struct __swift_bridge__$ReportType report_type; struct __swift_bridge__$TrackHeadingType track_heading_type; } __swift_bridge__$MiscellaneousIndicators;
+typedef struct __swift_bridge__$Option$MiscellaneousIndicators { bool is_some; __swift_bridge__$MiscellaneousIndicators val; } __swift_bridge__$Option$MiscellaneousIndicators;
 typedef enum __swift_bridge__$NICTag { __swift_bridge__$NIC$NIC0_Unknown, __swift_bridge__$NIC$NIC1_20NM, __swift_bridge__$NIC$NIC2_8NM, __swift_bridge__$NIC$NIC3_4NM, __swift_bridge__$NIC$NIC4_2NM, __swift_bridge__$NIC$NIC5_1NM, __swift_bridge__$NIC$NIC6_0_6NM, __swift_bridge__$NIC$NIC7_0_2NM, __swift_bridge__$NIC$NIC8_0_1NM, __swift_bridge__$NIC$NIC9_HPL_75M_VPL_112M, __swift_bridge__$NIC$NIC10_HPL_25M_VPL_37_5M, __swift_bridge__$NIC$NIC11_HPL_7_5M_VPL_11M, } __swift_bridge__$NICTag;
 typedef struct __swift_bridge__$NIC { __swift_bridge__$NICTag tag; } __swift_bridge__$NIC;
 typedef struct __swift_bridge__$Option$NIC { bool is_some; __swift_bridge__$NIC val; } __swift_bridge__$Option$NIC;
@@ -126,21 +126,6 @@ __swift_bridge__$Option$EmergencyPriorityCode __swift_bridge__$Vec_EmergencyPrio
 uintptr_t __swift_bridge__$Vec_EmergencyPriorityCode$len(void* vec_ptr);
 void* __swift_bridge__$Vec_EmergencyPriorityCode$as_ptr(void* vec_ptr);
 
-typedef struct __swift_bridge__$ForeFlightID { uint8_t version; uint64_t device_serial_number; void* device_name; void* device_long_name; struct __swift_bridge__$ForeFlightInternetPolicy foreflight_internet_policy; struct __swift_bridge__$GeometricAltitudeDatum geometric_altitude_datum; } __swift_bridge__$ForeFlightID;
-typedef struct __swift_bridge__$Option$ForeFlightID { bool is_some; __swift_bridge__$ForeFlightID val; } __swift_bridge__$Option$ForeFlightID;
-typedef enum __swift_bridge__$GeometricAltitudeDatumTag { __swift_bridge__$GeometricAltitudeDatum$WGS84, __swift_bridge__$GeometricAltitudeDatum$MSL, } __swift_bridge__$GeometricAltitudeDatumTag;
-typedef struct __swift_bridge__$GeometricAltitudeDatum { __swift_bridge__$GeometricAltitudeDatumTag tag; } __swift_bridge__$GeometricAltitudeDatum;
-typedef struct __swift_bridge__$Option$GeometricAltitudeDatum { bool is_some; __swift_bridge__$GeometricAltitudeDatum val; } __swift_bridge__$Option$GeometricAltitudeDatum;
-
-void* __swift_bridge__$Vec_GeometricAltitudeDatum$new(void);
-void __swift_bridge__$Vec_GeometricAltitudeDatum$drop(void* vec_ptr);
-void __swift_bridge__$Vec_GeometricAltitudeDatum$push(void* vec_ptr, __swift_bridge__$GeometricAltitudeDatum item);
-__swift_bridge__$Option$GeometricAltitudeDatum __swift_bridge__$Vec_GeometricAltitudeDatum$pop(void* vec_ptr);
-__swift_bridge__$Option$GeometricAltitudeDatum __swift_bridge__$Vec_GeometricAltitudeDatum$get(void* vec_ptr, uintptr_t index);
-__swift_bridge__$Option$GeometricAltitudeDatum __swift_bridge__$Vec_GeometricAltitudeDatum$get_mut(void* vec_ptr, uintptr_t index);
-uintptr_t __swift_bridge__$Vec_GeometricAltitudeDatum$len(void* vec_ptr);
-void* __swift_bridge__$Vec_GeometricAltitudeDatum$as_ptr(void* vec_ptr);
-
 typedef enum __swift_bridge__$ForeFlightInternetPolicyTag { __swift_bridge__$ForeFlightInternetPolicy$Unrestricted, __swift_bridge__$ForeFlightInternetPolicy$Expensive, __swift_bridge__$ForeFlightInternetPolicy$Disallowed, } __swift_bridge__$ForeFlightInternetPolicyTag;
 typedef struct __swift_bridge__$ForeFlightInternetPolicy { __swift_bridge__$ForeFlightInternetPolicyTag tag; } __swift_bridge__$ForeFlightInternetPolicy;
 typedef struct __swift_bridge__$Option$ForeFlightInternetPolicy { bool is_some; __swift_bridge__$ForeFlightInternetPolicy val; } __swift_bridge__$Option$ForeFlightInternetPolicy;
@@ -154,6 +139,21 @@ __swift_bridge__$Option$ForeFlightInternetPolicy __swift_bridge__$Vec_ForeFlight
 uintptr_t __swift_bridge__$Vec_ForeFlightInternetPolicy$len(void* vec_ptr);
 void* __swift_bridge__$Vec_ForeFlightInternetPolicy$as_ptr(void* vec_ptr);
 
+typedef enum __swift_bridge__$GeometricAltitudeDatumTag { __swift_bridge__$GeometricAltitudeDatum$WGS84, __swift_bridge__$GeometricAltitudeDatum$MSL, } __swift_bridge__$GeometricAltitudeDatumTag;
+typedef struct __swift_bridge__$GeometricAltitudeDatum { __swift_bridge__$GeometricAltitudeDatumTag tag; } __swift_bridge__$GeometricAltitudeDatum;
+typedef struct __swift_bridge__$Option$GeometricAltitudeDatum { bool is_some; __swift_bridge__$GeometricAltitudeDatum val; } __swift_bridge__$Option$GeometricAltitudeDatum;
+
+void* __swift_bridge__$Vec_GeometricAltitudeDatum$new(void);
+void __swift_bridge__$Vec_GeometricAltitudeDatum$drop(void* vec_ptr);
+void __swift_bridge__$Vec_GeometricAltitudeDatum$push(void* vec_ptr, __swift_bridge__$GeometricAltitudeDatum item);
+__swift_bridge__$Option$GeometricAltitudeDatum __swift_bridge__$Vec_GeometricAltitudeDatum$pop(void* vec_ptr);
+__swift_bridge__$Option$GeometricAltitudeDatum __swift_bridge__$Vec_GeometricAltitudeDatum$get(void* vec_ptr, uintptr_t index);
+__swift_bridge__$Option$GeometricAltitudeDatum __swift_bridge__$Vec_GeometricAltitudeDatum$get_mut(void* vec_ptr, uintptr_t index);
+uintptr_t __swift_bridge__$Vec_GeometricAltitudeDatum$len(void* vec_ptr);
+void* __swift_bridge__$Vec_GeometricAltitudeDatum$as_ptr(void* vec_ptr);
+
+typedef struct __swift_bridge__$ForeFlightID { uint8_t version; uint64_t device_serial_number; void* device_name; void* device_long_name; struct __swift_bridge__$ForeFlightInternetPolicy foreflight_internet_policy; struct __swift_bridge__$GeometricAltitudeDatum geometric_altitude_datum; } __swift_bridge__$ForeFlightID;
+typedef struct __swift_bridge__$Option$ForeFlightID { bool is_some; __swift_bridge__$ForeFlightID val; } __swift_bridge__$Option$ForeFlightID;
 typedef enum __swift_bridge__$AHRSHeadingTypeTag { __swift_bridge__$AHRSHeadingType$True, __swift_bridge__$AHRSHeadingType$Magnetic, } __swift_bridge__$AHRSHeadingTypeTag;
 typedef struct __swift_bridge__$AHRSHeadingType { __swift_bridge__$AHRSHeadingTypeTag tag; } __swift_bridge__$AHRSHeadingType;
 typedef struct __swift_bridge__$Option$AHRSHeadingType { bool is_some; __swift_bridge__$AHRSHeadingType val; } __swift_bridge__$Option$AHRSHeadingType;
